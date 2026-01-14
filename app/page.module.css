@@ -1,0 +1,493 @@
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  background: white;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.content {
+  width: 393px;
+  min-height: 852px;
+  max-width: 393px;
+  margin: 0 auto;
+  padding: 0 12px;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0;
+  align-items: flex-start;
+}
+
+.time {
+  font-family: 'Times New Roman', serif;
+  font-size: 12px;
+  color: black;
+}
+
+.profileSection {
+  display: flex;
+  gap: 0;
+  margin-top: 12px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid black;
+  align-items: flex-end;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+  justify-content: flex-end;
+  gap: 0;
+  position: relative;
+  align-items: flex-start;
+}
+
+.profileImage {
+  width: 75px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.profileImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name {
+  font-family: 'Times New Roman', serif;
+  font-size: 12px;
+  color: white;
+  background: #FFAF00;
+  border: none;
+  padding: 1px 1px 1px 0;
+  cursor: pointer;
+  text-align: left;
+  text-decoration: none;
+  line-height: 14px;
+  margin-bottom: 0;
+  display: inline-block;
+  width: auto;
+}
+
+.downArrow {
+  font-size: 10px;
+  margin-left: 2px;
+}
+
+.name:hover {
+  text-decoration: none;
+}
+
+.education {
+  font-family: 'Times New Roman', serif;
+  font-size: 12px;
+  color: rgb(0, 0, 255);
+  text-decoration: underline;
+  line-height: 14px;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  padding: 4px 0;
+  z-index: 100;
+  min-width: 120px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  margin-top: 0;
+}
+
+.dropdownLink {
+  display: block;
+  padding: 6px 16px;
+  font-family: 'Times New Roman', serif;
+  font-size: 12px;
+  color: black;
+  text-decoration: none;
+}
+
+.dropdownLink:hover {
+  background: #e0e0e0;
+}
+
+.dropdownLink:hover {
+  background: #f0f0f0;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+  flex: 1;
+  position: relative;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  line-height: 1;
+}
+
+.categorySection {
+  display: block;
+  line-height: 1;
+  white-space: normal;
+}
+
+.categoryName {
+  font-family: 'Times New Roman', serif;
+  font-size: 12px;
+  color: rgb(0, 0, 255);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  text-decoration: underline;
+  font-weight: normal;
+  display: inline;
+}
+
+.categoryName:hover {
+  opacity: 0.8;
+}
+
+.projectsList {
+  display: inline;
+  margin-top: 0;
+  padding-left: 0;
+  line-height: 1;
+  white-space: normal;
+}
+
+.projectItem {
+  font-family: 'Times New Roman', serif;
+  font-size: 12px;
+  color: black;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  text-decoration: none;
+  display: inline;
+  white-space: nowrap;
+}
+
+.projectItem:hover {
+  color: #FFAF00;
+  font-style: italic;
+}
+
+.projectItem.selected {
+  color: #FFAF00;
+  font-style: italic;
+}
+
+.separator {
+  font-family: 'Times New Roman', serif;
+  font-size: 12px;
+  color: black;
+  margin: 0 1px;
+}
+
+.contentDisplay {
+  flex: 1;
+  min-height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+}
+
+
+.imageContainer {
+  width: 100%;
+  position: relative;
+  background: #f5f5f5;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.projectImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.imageInfo {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+}
+
+.imageTitle {
+  font-family: 'Times New Roman', serif;
+  font-size: 12px;
+  font-style: italic;
+  color: black;
+}
+
+.imageDescription {
+  font-family: 'Times New Roman', serif;
+  font-size: 12px;
+  color: black;
+}
+
+.pageCounter {
+  position: absolute;
+  top: 12px;
+  right: 0;
+  font-family: 'Times New Roman', serif;
+  font-size: 12px;
+  color: black;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: 100%;
+  background: white;
+}
+
+.footerText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footerTitle {
+  font-family: 'Times New Roman', serif;
+  font-size: 12px;
+  font-style: italic;
+  color: black;
+}
+
+.footerDescription {
+  font-family: 'Times New Roman', serif;
+  font-size: 12px;
+  color: black;
+}
+
+.pageNumber {
+  font-family: 'Times New Roman', serif;
+  font-size: 12px;
+  color: black;
+}
+
+.resumeOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 120px; /* Position below name button and dropdown area */
+  overflow-y: auto;
+  overflow-x: hidden;
+  pointer-events: none; /* Allow clicks to pass through overlay */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.resumeOverlay::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.resumeView {
+  width: 100%;
+  max-width: 320px;
+  background: #fafafa; /* Slightly darker than white */
+  padding: 20px;
+  padding-top: 30px; /* Space for close button */
+  position: relative;
+  orphans: 2;
+  widows: 2;
+  margin: 0 auto;
+  border: 1px solid black; /* Black stroke */
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  pointer-events: auto; /* Enable clicks on resume box */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.resumeView::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.closeButton {
+  width: 16px;
+  height: 16px;
+  background: #e0e0e0;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 1001;
+  color: black;
+  font-family: 'Times New Roman', serif;
+}
+
+.resumeInlineLink {
+  color: rgb(80, 120, 255);
+  text-decoration: underline;
+  font-family: 'akzidenz-grotesk', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.resumeContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resumeSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.resumeName {
+  font-family: 'akzidenz-grotesk', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  color: #FFAF00;
+  text-decoration: underline;
+}
+
+.resumeContact {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 4px;
+}
+
+.resumeContact > div {
+  font-family: 'akzidenz-grotesk', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  color: black;
+}
+
+.resumeContactLink {
+  font-family: 'akzidenz-grotesk', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  color: black;
+  text-decoration: none;
+}
+
+.resumeHeading {
+  font-family: 'akzidenz-grotesk', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  color: black;
+  text-decoration: underline;
+}
+
+.resumeText {
+  font-family: 'akzidenz-grotesk', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  color: black;
+}
+
+.resumeItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 16px;
+}
+
+.resumeItemTitle {
+  font-family: 'akzidenz-grotesk', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  color: black;
+  font-style: italic;
+  margin-bottom: 4px;
+  text-wrap: balance;
+  orphans: 2;
+  widows: 2;
+}
+
+.resumeItemTitleLink {
+  font-family: 'akzidenz-grotesk', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  color: rgb(0, 0, 255);
+  text-decoration: underline;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+.resumeItemSubtitle {
+  font-family: 'akzidenz-grotesk', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+  text-wrap: balance;
+  orphans: 2;
+  widows: 2;
+}
+
+.resumeItemDate {
+  font-family: 'akzidenz-grotesk', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 8px;
+  text-wrap: balance;
+  orphans: 2;
+  widows: 2;
+}
+
+.resumeItemText {
+  font-family: 'akzidenz-grotesk', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  color: #666;
+  margin-left: 12px;
+  text-indent: -12px;
+  margin-bottom: 4px;
+  text-wrap: balance;
+  orphans: 2;
+  widows: 2;
+  word-spacing: 0.05em;
+}
+
