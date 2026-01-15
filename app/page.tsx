@@ -11,6 +11,7 @@ export default function Home() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [showResume, setShowResume] = useState(false);
   const [currentTime, setCurrentTime] = useState('');
+  const [imageLoaded, setImageLoaded] = useState(true);
   const touchStartRef = useRef<{ x: number; y: number } | null>(null);
   const nameButtonRef = useRef<HTMLButtonElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -86,7 +87,12 @@ export default function Home() {
           const totalImages = currentProject.images.length;
           const nextIndex = (prev.imageIndex + 1) % totalImages;
           
-          return { ...prev, imageIndex: nextIndex };
+          // Only advance if next image is loaded
+          if (imageLoaded) {
+            setImageLoaded(false);
+            return { ...prev, imageIndex: nextIndex };
+          }
+          return prev;
         });
       }, scrollInterval);
 
@@ -147,6 +153,19 @@ export default function Home() {
   const currentProject = selectedProject 
     ? portfolioData.find(c => c.name === selectedProject.category)?.projects.find(p => p.name === selectedProject.project)
     : null;
+
+  // Preload next image
+  useEffect(() => {
+    if (!selectedProject || !currentProject) return;
+    
+    const nextIndex = (selectedProject.imageIndex + 1) % currentProject.images.length;
+    const nextImage = currentProject.images[nextIndex];
+    
+    if (nextImage && !nextImage.src.endsWith('.mp4') && !nextImage.src.endsWith('.mov') && !nextImage.src.endsWith('.pdf')) {
+      const img = document.createElement('img');
+      img.src = nextImage.src;
+    }
+  }, [selectedProject, currentProject]);
 
   return (
     <div className={styles.container}>
@@ -454,7 +473,12 @@ export default function Home() {
                         src={currentImage.src}
                         className={styles.projectImage}
                         controls
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
                         style={{ width: '100%', height: 'auto' }}
+                        onLoadedData={() => setImageLoaded(true)}
                       />
                     ) : currentImage.src.endsWith('.pdf') ? (
                       <iframe
@@ -469,10 +493,18 @@ export default function Home() {
                         src={currentImage.src}
                         alt={currentImage.title}
                         className={styles.projectImage}
-                        style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
+                        style={{ 
+                          width: '100%', 
+                          height: 'auto', 
+                          objectFit: 'contain',
+                          opacity: imageLoaded ? 1 : 0,
+                          transition: 'opacity 0.3s ease-in-out'
+                        }}
+                        onLoad={() => setImageLoaded(true)}
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="369" height="400"%3E%3Crect width="369" height="400" fill="%23e0e0e0"/%3E%3Ctext x="50%25" y="50%25" text-anchor="middle" dy=".3em" font-family="Times New Roman" font-size="12" fill="%23999"%3EImage not found%3C/text%3E%3C/svg%3E';
+                          setImageLoaded(true);
                         }}
                       />
                     )}
