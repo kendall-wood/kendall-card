@@ -214,10 +214,38 @@ export const portfolioData: Category[] = [
         name: "blackbuy",
         images: [
           {
-            src: "/placeholder.jpg",
+            src: "/images/Scan Preview.png",
             title: "blackbuy",
             date: "2024",
-            medium: "Digital",
+            medium: "UX/UI",
+            description: "E-commerce platform for Black-owned businesses."
+          },
+          {
+            src: "/images/Log In Preview.png",
+            title: "blackbuy",
+            date: "2024",
+            medium: "UX/UI",
+            description: "E-commerce platform for Black-owned businesses."
+          },
+          {
+            src: "/images/Find Preview.png",
+            title: "blackbuy",
+            date: "2024",
+            medium: "UX/UI",
+            description: "E-commerce platform for Black-owned businesses."
+          },
+          {
+            src: "/images/Shop Preview.png",
+            title: "blackbuy",
+            date: "2024",
+            medium: "UX/UI",
+            description: "E-commerce platform for Black-owned businesses."
+          },
+          {
+            src: "/images/Save Preview.png",
+            title: "blackbuy",
+            date: "2024",
+            medium: "UX/UI",
             description: "E-commerce platform for Black-owned businesses."
           }
         ]
