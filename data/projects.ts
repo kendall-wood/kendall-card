@@ -254,11 +254,11 @@ export const portfolioData: Category[] = [
         name: "simon design library",
         images: [
           {
-            src: "/placeholder.jpg",
+            src: "IFRAME:https://simon-design-library.vercel.app/",
             title: "simon design library",
             date: "2024",
             medium: "Digital",
-            description: "Digital library for design resources."
+            description: "Digital library for design resources. Live site: https://simon-design-library.vercel.app/"
           }
         ]
       },

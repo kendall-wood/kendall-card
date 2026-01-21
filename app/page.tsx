@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { portfolioData, dropdownLinks, ProjectImage } from '@/data/projects';
+import IPhoneFrame from '@/components/IPhoneFrame';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -63,9 +64,9 @@ export default function Home() {
     const project = category.projects.find(p => p.name === selectedProject.project);
     if (!project) return;
 
-    // Only auto-scroll if there are multiple images and they're not PDFs
+    // Only auto-scroll if there are multiple images and they're not PDFs or iframes
     const hasMultipleImages = project.images.length > 1;
-    const hasNonPdfImages = project.images.some(img => !img.src.endsWith('.pdf'));
+    const hasNonPdfImages = project.images.some(img => !img.src.endsWith('.pdf') && !img.src.startsWith('IFRAME:'));
 
     if (hasMultipleImages && hasNonPdfImages) {
       // Set scroll interval based on project name
@@ -467,7 +468,12 @@ export default function Home() {
                   }}
                 >
                   <div key={`wrapper-${selectedProject.category}-${selectedProject.project}-${selectedProject.imageIndex}`} className={styles.imageWrapper}>
-                    {currentImage.src.endsWith('.mp4') || currentImage.src.endsWith('.mov') ? (
+                    {currentImage.src.startsWith('IFRAME:') ? (
+                      <IPhoneFrame 
+                        url={currentImage.src.replace('IFRAME:', '')}
+                        title={currentImage.title}
+                      />
+                    ) : currentImage.src.endsWith('.mp4') || currentImage.src.endsWith('.mov') ? (
                       <video
                         key={`video-${selectedProject.category}-${selectedProject.project}-${selectedProject.imageIndex}`}
                         src={currentImage.src}
