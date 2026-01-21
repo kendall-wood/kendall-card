@@ -526,7 +526,24 @@ export default function Home() {
                     {currentImage.title} / {currentImage.date} / {currentImage.medium}
                   </div>
                   <div className={styles.imageDescription}>
-                    {currentImage.description}
+                    {currentImage.description.split(' ').map((word, index) => {
+                      // Check if word is a URL
+                      if (word.startsWith('http://') || word.startsWith('https://')) {
+                        return (
+                          <span key={index}>
+                            <a 
+                              href={word} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className={styles.descriptionLink}
+                            >
+                              {word}
+                            </a>{' '}
+                          </span>
+                        );
+                      }
+                      return word + ' ';
+                    })}
                   </div>
                 </div>
               </>

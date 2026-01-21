@@ -263,6 +263,20 @@
   color: black;
 }
 
+.descriptionLink {
+  color: #0000EE;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.descriptionLink:hover {
+  color: #551A8B;
+}
+
+.descriptionLink:visited {
+  color: #551A8B;
+}
+
 .pageCounter {
   position: absolute;
   top: 12px;
