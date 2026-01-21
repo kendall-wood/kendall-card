@@ -221,13 +221,6 @@ export const portfolioData: Category[] = [
             description: "E-commerce platform for Black-owned businesses."
           },
           {
-            src: "/images/Log In Preview.png",
-            title: "blackbuy",
-            date: "2024",
-            medium: "UX/UI",
-            description: "E-commerce platform for Black-owned businesses."
-          },
-          {
             src: "/images/Find Preview.png",
             title: "blackbuy",
             date: "2024",
@@ -243,6 +236,13 @@ export const portfolioData: Category[] = [
           },
           {
             src: "/images/Save Preview.png",
+            title: "blackbuy",
+            date: "2024",
+            medium: "UX/UI",
+            description: "E-commerce platform for Black-owned businesses."
+          },
+          {
+            src: "/images/Log In Preview.png",
             title: "blackbuy",
             date: "2024",
             medium: "UX/UI",
